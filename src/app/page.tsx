@@ -3,7 +3,7 @@
 
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
@@ -305,9 +305,9 @@ const ContactSection = () => (
     <AnimatedSection id="contact">
         <div className="container mx-auto text-center">
             <SectionHeader title="Let's Build Together" />
-            <p className="text-text-dark max-w-2xl mx-auto mb-12">
-                I'm excited to connect and explore new opportunities. Drop me a message below, or find me on social media.
-            </p>
+           <p className="text-text-dark max-w-2xl mx-auto mb-12">
+              I&apos;m excited to connect and explore new opportunities. Drop me a message below, or find me on social media.
+           </p>
             <motion.form
                 className="max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 50 }}
