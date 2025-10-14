@@ -255,7 +255,7 @@ const projects = [
 
 const ProjectsSection = () => (
   <AnimatedSection id="projects">
-    <div className="container mx-auto">
+    <div className="container mx-auto dark:text-black">
       <SectionHeader title="Featured Projects" />
       {/* --- CHANGE: Gidugangan ug justify-center para ma-sentro ang duha ka projects --- */}
       <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
