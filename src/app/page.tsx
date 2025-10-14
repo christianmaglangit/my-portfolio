@@ -229,7 +229,7 @@ const skills = [
 const SkillsSection = () => (
     <AnimatedSection id="skills">
         <div className="container mx-auto dark:text-black">
-            <SectionHeader title="Tech Arsenal" />
+            <SectionHeader title="Crafting with Code" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {skills.map((skill, index) => (
                     <motion.div
