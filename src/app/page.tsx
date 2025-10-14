@@ -184,12 +184,13 @@ const AboutMeSection = () => (
                 {journey.map((item, index) => (
                     <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse left-timeline' : 'right-timeline'}`}>
                         <div className="order-1 w-5/12"></div>
-                        <div className="z-20 flex items-center order-1 bg-accent-cyan shadow-xl w-8 h-8 bg-gray-100 rounded-full">
-                            <h1 className="mx-auto font-semibold text-lg text-black">{index + 1}</h1>
+                        <div className="z-20 flex items-center order-1 bg-accent-cyan shadow-xl w-8 h-8 rounded-full">
+                            <h1 className="mx-auto font-semibold text-lg text-white">{index + 1}</h1>
                         </div>
-                        <div className="order-1 glass-card bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
-                            <h3 className="mb-3 font-bold text-text-light text-xl">{item.title} - <span className="text-accent-cyan">{item.year}</span></h3>
-                            <p className="text-sm leading-snug tracking-wide text-text-dark">{item.description}</p>
+                        {/* --- CHANGE: Gi-ilisan ang text colors para mabasa sa light background --- */}
+                        <div className="order-1 glass-card bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 className="mb-3 font-bold text-gray-900 text-xl">{item.title} - <span className="text-accent-cyan">{item.year}</span></h3>
+                            <p className="text-sm leading-snug tracking-wide text-gray-600">{item.description}</p>
                         </div>
                     </div>
                 ))}
@@ -240,11 +241,13 @@ const ProjectsSection = () => (
   <AnimatedSection id="projects">
     <div className="container mx-auto">
       <SectionHeader title="Featured Projects" />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* --- CHANGE: Gidugangan ug justify-center para ma-sentro ang duha ka projects --- */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
-            className="glass-card rounded-lg overflow-hidden group relative bg-gray-100"
+            // --- CHANGE: Gi-ilisan ang background ug text colors ---
+            className="glass-card rounded-lg overflow-hidden group relative bg-white"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -252,8 +255,8 @@ const ProjectsSection = () => (
           >
             <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-2 text-text-light">{project.title}</h3>
-              <p className="text-text-dark mb-4">{project.description}</p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-900">{project.title}</h3>
+              <p className="text-gray-600 mb-4">{project.description}</p>
               <div className="flex space-x-4">
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:underline">View Live</a>
               </div>
