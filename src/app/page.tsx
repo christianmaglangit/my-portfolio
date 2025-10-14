@@ -8,9 +8,6 @@ import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import type { Engine } from "tsparticles-engine";
 import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiCode, FiBriefcase, FiHome, FiUser, FiPhone, FiCamera, FiFacebook, FiInstagram } from 'react-icons/fi';
 import { SiNextdotjs, SiTypescript, SiSupabase, SiPhp, SiLaravel, SiMysql, SiTailwindcss, SiHtml5 } from 'react-icons/si';
 
