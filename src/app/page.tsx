@@ -67,14 +67,14 @@ const Header = () => {
                 <div className="text-2xl font-bold font-orbitron tracking-widest">
                     <Link to="home" smooth={true} duration={500} className="cursor-pointer">
                         {/* --- CHANGE: From accent-pink to text-light for a cleaner look --- */}
-                        <span className="text-text-light">My Portfolio</span>
+                        <span className="text-text-light dark:text-black">My Portfolio</span>
                     </Link>
                 </div>
                 <ul className="hidden md:flex space-x-8">
                     {navLinks.map(link => (
                          <li key={link.name}>
                             {/* --- CHANGE: Hover color is now cyan --- */}
-                            <Link to={link.to} smooth={true} duration={500} spy={true} activeClass="text-accent-cyan" className="cursor-pointer hover:text-accent-cyan transition-colors flex items-center gap-2">
+                            <Link to={link.to} smooth={true} duration={500} spy={true} activeClass="text-accent-cyan" className="cursor-pointer hover:text-accent-cyan transition-colors flex items-center gap-2 dark:text-black">
                                {link.icon} {link.name}
                             </Link>
                         </li>
@@ -93,7 +93,7 @@ const HeroSection = () => {
     ];
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center p-5 relative overflow-hidden">
+        <section id="home" className="dark:text-black min-h-screen flex items-center justify-center p-5 relative overflow-hidden">
             <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
                 <div className="relative z-10 text-center md:text-left">
                     <motion.h1 
@@ -177,20 +177,36 @@ const journey = [
 
 const AboutMeSection = () => (
     <AnimatedSection id="about">
-        <div className="container mx-auto">
+        <div className="container mx-auto dark:text-black">
             <SectionHeader title="My Journey" />
-            <div className="relative wrap overflow-hidden p-10 h-full">
-                <div className="absolute border-opacity-20 border-accent-cyan/50 h-full border" style={{ left: '50%' }}></div>
+            {/* GI-USAB: Responsive padding */}
+            <div className="relative wrap overflow-hidden p-4 md:p-10">
+                
+                {/* GI-USAB: Ang linya naa sa kilid sa mobile, sa tunga sa desktop */}
+                <div className="absolute h-full border-2 border-opacity-20 border-accent-cyan/50 left-4 md:left-1/2 -translate-x-px md:-translate-x-1/2"></div>
+
                 {journey.map((item, index) => (
-                    <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse left-timeline' : 'right-timeline'}`}>
-                        <div className="order-1 w-5/12"></div>
-                        <div className="z-20 flex items-center order-1 bg-accent-cyan shadow-xl w-8 h-8 rounded-full">
-                            <h1 className="mx-auto font-semibold text-lg text-white">{index + 1}</h1>
+                    <div 
+                        key={index}
+                        // GI-USAB: Kini nga container naay responsive classes para sa layout
+                        className={`mb-8 flex items-center w-full relative ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} md:justify-between`}
+                    >
+                        {/* GI-USAB: Ang spacer kay para sa desktop ra, tago sa mobile */}
+                        <div className="hidden md:block md:w-5/12"></div>
+                        
+                        {/* GI-USAB: Ang circle naay lain-lain nga position sa mobile vs. desktop */}
+                        <div className="z-20 flex items-center justify-center order-1 dark:bg-gray-200 bg-accent-cyan shadow-xl w-8 h-8 rounded-full absolute left-4 -translate-x-4 md:relative md:left-auto md:translate-x-0">
+                            <h1 className="mx-auto font-semibold text-lg text-white dark:text-black">{index + 1}</h1>
                         </div>
-                        {/* --- CHANGE: Gi-ilisan ang text colors para mabasa sa light background --- */}
-                        <div className="order-1 glass-card bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
-                            <h3 className="mb-3 font-bold text-gray-900 text-xl">{item.title} - <span className="text-accent-cyan">{item.year}</span></h3>
-                            <p className="text-sm leading-snug tracking-wide text-gray-600">{item.description}</p>
+                        
+                        {/* GI-USAB: Ang card naay margin sa mobile, wala sa desktop */}
+                        <div className="order-1 bg-white dark:bg-secondary rounded-lg shadow-xl w-full ml-10 md:w-5/12 md:ml-0 px-6 py-4">
+                            <h3 className="mb-3 font-bold text-gray-900 dark:text-text-light text-xl">
+                                {item.title} - <span className="text-accent-cyan">{item.year}</span>
+                            </h3>
+                            <p className="text-sm leading-snug tracking-wide text-gray-600 dark:text-black">
+                                {item.description}
+                            </p>
                         </div>
                     </div>
                 ))}
@@ -212,7 +228,7 @@ const skills = [
 
 const SkillsSection = () => (
     <AnimatedSection id="skills">
-        <div className="container mx-auto">
+        <div className="container mx-auto dark:text-black">
             <SectionHeader title="Tech Arsenal" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {skills.map((skill, index) => (
@@ -277,7 +293,7 @@ const galleryImages = [
 
 const GallerySection = () => (
     <AnimatedSection id="gallery">
-        <div className="container mx-auto">
+        <div className="container mx-auto dark:text-black">
             <SectionHeader title="Glimpses of My World" />
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {galleryImages.map((image, index) => (
@@ -303,7 +319,7 @@ const GallerySection = () => (
 );
 const ContactSection = () => (
     <AnimatedSection id="contact">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center dark:text-black">
             <SectionHeader title="Let's Build Together" />
            <p className="text-text-dark max-w-2xl mx-auto mb-12">
               I&apos;m excited to connect and explore new opportunities. Drop me a message below, or find me on social media.
@@ -319,12 +335,12 @@ const ContactSection = () => (
                     alert("Thank you for your message. Please note that this form is currently not operational. For any inquiries or correspondence, kindly reach out via my social media channels listed below.");
                 }}
             >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 ">
                     <input
                         type="text"
                         placeholder="Your Name"
                         aria-label="Your Name"
-                        className="glass-card w-full p-4 rounded-lg border border-accent-cyan/30 focus:border-accent-cyan focus:outline-none bg-primary text-text-light placeholder-text-dark transition-colors"
+                        className="dark:text-black glass-card w-full p-4 rounded-lg border border-accent-cyan/30 focus:border-accent-cyan focus:outline-none bg-primary text-text-light placeholder-text-dark transition-colors"
                     />
                     <input
                         type="email"
@@ -367,7 +383,7 @@ const ContactSection = () => (
 );
 
 const Footer = () => (
-    <footer className="bg-primary py-6 text-center text-text-dark border-t border-accent-cyan/20">
+    <footer className="dark:text-black bg-primary py-6 text-center text-text-dark border-t border-accent-cyan/20">
         <p>&copy; {new Date().getFullYear()} Christian B. Maglangit. Designed & Built with Passion.</p>
     </footer>
 );
