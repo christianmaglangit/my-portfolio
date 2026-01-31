@@ -250,7 +250,7 @@ const SkillsSection = () => (
 );
 const projects = [
     { title: "Student Activity Attendance", description: "A modern web app built with Next.js and Supabase that uses QR codes to record student attendance during school activities — eliminating the need for paper sheets.", image: "/images/SAA.png", liveUrl: "https://attendance-portal-cheave.vercel.app/" },
-    { title: "DUGO (Donor Utility for Giving and Organizing)", description: "A mobile and web app that streamlines the blood donation process through smart tracking, AI support, predictive analytics, and efficient donor–blood bank coordination.", image: "/images/DUGO.png", liveUrl: "https://dugo-system-7ds9.vercel.app/" },
+    { title: "DUGO (Donor Utility for Giving and Organizing)", description: "A mobile and web app that streamlines the blood donation process through smart tracking, AI support, predictive analytics, and efficient donor–blood bank coordination.", image: "/images/DUGO.png", liveUrl: "https://dugosystem.vercel.app/" },
 ];
 
 const ProjectsSection = () => (
