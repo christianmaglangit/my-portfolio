@@ -170,11 +170,9 @@ const SectionHeader = ({ title }: { title: string }) => (
 );
 
 const journey = [
-    { year: "2021", title: "Started with HTML & CSS", description: "Began my coding journey by exploring classic HTML and CSS, building a strong foundation in web development." },
-    { year: "2022", title: "PHP & XAMPP", description: "Dived deep into the Laravel framework, creating robust and scalable applications powered by MySQL." },
-    { year: "2024", title: "Embraced the Modern Stack", description: "Transitioned to the JavaScript ecosystem, specializing in Next.js, TypeScript, and Tailwind CSS to deliver high-performance web experiences." },
-    { year: "2025", title: "Work Experince", description: "Managed a team of developers for two website projects, ensuring quality, timely delivery, and efficient use of modern web technologies." },
-    { year: "Today", title: "Full Stack", description: "Confidently building full-stack solutions using Supabase for backend services, combining the best of modern and traditional web technologies." }
+    { year: "2025", title: "Work Experience", description: "Managed a team of 2 developers for a client website project, focusing on timely completion, collaboration, and quality assurance." },
+    { year: "2026", title: "Internship",description:"Completed an internship at Mabuhay Vinyl Corporation - Iligan Plant,  gaining hands-on experience in web development, collaboration, and modern development practices.",},
+    { year: "Today", title: "Full Stack", description: "Building full-stack solutions and websites with modern backend technologies while leveraging both modern and traditional web development practices." }
 ];
 
 const AboutMeSection = () => (
